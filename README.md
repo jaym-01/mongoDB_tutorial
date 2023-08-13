@@ -1,3 +1,3 @@
-# MongoDB and Mongoose Challenges
+# MongoDB and Mongoose Course
 
-This is the boilerplate for the MongoDB and Mongoose lessons. Instructions for completing these lessons start at https://www.freecodecamp.org/learn/apis-and-microservices/mongodb-and-mongoose/
+This I used to complete the tasks from the course: https://www.freecodecamp.org/learn/back-end-development-and-apis 
