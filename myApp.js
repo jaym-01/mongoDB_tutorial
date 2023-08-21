@@ -6,20 +6,20 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 const personSchema = new mongoose.Schema({
   name:{
     type: String,
-    required: true
+    required: true,
   },
   age: {
-    type: Number
+    type: Number,
   },
   favoriteFoods: {
-    type: String,
-    default: ["carrots"]
+    type: [String],
+    // default: ["carrots"]
   }
 });
 
 let Person;
 
-Person = mongoose.model("people", personSchema);
+Person = mongoose.model("Person", personSchema);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
