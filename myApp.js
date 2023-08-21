@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const personSchema = new mongoose.Schema({
-  name:{
+  name: {
     type: String,
     required: true,
   },
@@ -28,14 +28,38 @@ const createAndSavePerson = (done) => {
     favoriteFoods: ["carrots", "cucumber"]
   });
 
-  p1.save(function(err, data){
+  p1.save(function (err, data) {
     if (err) done(err);
     else done(null, data);
   });
 };
 
+// let arrayOfPeople = [];
+
+// for (let i = 0; i < 5; i++) {
+//   arrayOfPeople.push({
+//     name: "test" + i.toString(),
+//     age: 100 + i,
+//     favoriteFoods: ["carrots" + i.toString(), "cucumber" + i.toString()],
+//   })
+// }
+
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+  // arrayOfPeople = [];
+
+  // for (let i = 0; i < 5; i++) {
+  //   arrayOfPeople.push({
+  //     name: "test" + i.toString(),
+  //     age: 100 + i,
+  //     favoriteFoods: ["carrots" + i.toString(), "cucumber" + i.toString()],
+  //   })
+  // }
+
+  Person.create(arrayOfPeople, function (err, data) {
+    if (err) done(err);
+    else done(null, data);
+  });
+
 };
 
 const findPeopleByName = (personName, done) => {
